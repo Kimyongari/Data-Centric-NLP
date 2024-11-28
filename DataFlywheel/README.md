@@ -7,8 +7,10 @@
 ```python
 from flywheel import flywheel
 
-flywheel = flywheel() # flywheel 객체를 생성합니다. 이 과정에서 데이터를 불러오고 Text abnormal data를 선별합니다.
-flywheel.inference_and_cleanlab() # Text abnormal data가 있다면 Text 오염을 LLM을 통해 복구한 뒤 훈련하고 Train data에 대한 Label issue를 찾아 데이터의 Label을 모델의 예측값으로 바꿉니다.
+flywheel = flywheel() # flywheel 객체를 생성합니다. 
+# 이 과정에서 데이터를 불러오고 Text abnormal data를 선별합니다.
+flywheel.inference_and_cleanlab() # Text abnormal data가 있다면 Text 오염을 LLM을 통해 복구한 뒤 훈련합니다.
+# Train data에 대한 Label issue를 찾아 데이터의 Label을 모델의 예측값으로 바꿉니다.
 flywheel.make_new_data() # 주어진 데이터의 Label 분포를 분석하여 분포가 일정하도록 역번역, 문장 재구성, 키워드를 통한 문장생성 등의 증강을 수행합니다.
 ```
 
